@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Guard Test Page</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+        h1 { color: #1a73e8; }
+        p { color: #5f6368; }
+        /* CHANGE THIS BUTTON COLOR TO TEST YOUR MONITOR */
+        .btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 10px 20px;
+            background-color: #ff0000; /* Change from blue to red */
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Status: Normal</h1>
+        <p>This is a stable test page for visual regression monitoring.</p>
+        <a href="#" class="btn">Action Button</a>
+        <div id="timestamp" style="margin-top: 10px; font-size: 10px; color: #ccc;">
+            Version 1.0
+        </div>
+    </div>
+</body>
+</html>

@@ -33,3 +33,24 @@ if os.path.exists(base):
             st.image(diff)
         else:
             st.success("No differences detected.")
+
+
+# Inside app.py
+from engine import run_visual_check
+from utils import get_url_id
+import asyncio
+
+url_id = get_url_id(url_to_check) # Dynamic hashing instead of hardcoded string
+
+if st.sidebar.button("Run Manual Check"):
+    with st.spinner("Browsing site and comparing pixels..."):
+        # This bridge allows Streamlit to run your async engine
+        async def trigger():
+            async with async_playwright() as p:
+                browser = await p.chromium.launch(headless=True)
+                context = await browser.new_context()
+                await run_visual_check(context, url_to_check)
+                await browser.close()
+        
+        asyncio.run(trigger())
+        st.sidebar.success("Check Complete!")

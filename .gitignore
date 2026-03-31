@@ -1,0 +1,14 @@
+# Python environment
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Monitoring Results (Don't track these!)
+baseline_*.png
+current_*.png
+diff_*.png
+
+# OS junk
+.DS_Store
